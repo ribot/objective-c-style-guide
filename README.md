@@ -3,16 +3,17 @@ Unless explicitly contradicted below, assume that all of Apple's guidelines appl
 
 ## Whitespace
 
- * Space, not tabs.
+ * Spaces, not tabs.
  * Tab width of 4.
  * End files with a newline.
- * Make liberal use of vertical whitespace to divide code into logical chunks, but no more than one newline between each block.
+ * Make liberal use of vertical whitespace to divide code into logical chunks, but no more than one newline between each chunk.
  * Don’t leave trailing whitespace.
     * Not even leading indentation on blank lines.
 
 ## Documentation and Organization
 
  * All method declarations should be documented.
+ * Comments in code should be used to describe what a logical chunk does. Use your judgement and add comments where you think something needs explaining.
  * Comments should be [Doxygen](http://www.stack.nl/~dimitri/doxygen/)-style.
  * Document whether object parameters allow `nil` as a value.
  * Use `#pragma mark`s to categorize methods into functional groupings and protocol implementations, following this general structure:
@@ -60,7 +61,6 @@ Unless explicitly contradicted below, assume that all of Apple's guidelines appl
  * Don't put a space between an object type and the protocol it conforms to.
 
 ```objc
-@property (attributes) id<Protocol> object;
 @property (nonatomic, strong) NSObject<Protocol> *object;
 ```
 
@@ -70,7 +70,20 @@ Unless explicitly contradicted below, assume that all of Apple's guidelines appl
 
  * Use dot-syntax when invoking idempotent methods, including setters and class methods (like `NSFileManager.defaultManager`).
  * Use object literals, boxed expressions, and subscripting over the older, grosser alternatives.
- * Comparisons should be explicit.
+ * Comparisons should be explicit, including `BOOL`s.
+
+```objc
+if (boolean == YES)
+{
+    // Do something
+}
+
+if (thing1 == thing2)
+{
+    // Do something
+}
+```
+
  * Prefer positive comparisons to negative.
  * Long form ternary operators should only used for assignment and arguments.
 
@@ -98,7 +111,7 @@ for (int i = 0; i < 10; i++) {
  * No spaces between parentheses and their contents.
 
 ```objc
-if (somethingIsBad)
+if (somethingIsBad == YES)
 {
     return;
 }
