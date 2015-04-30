@@ -103,8 +103,8 @@ for (int i = 0; i < 10; i++) {
 ## Control Structures
 
  * Always surround control structure bodies with curly braces.
- * Starting curly braces should begin on the same line as athe control structure and closing braces should be on their own line.
- * `else` or `else if` control structures should be on their own line, not share a line with the previous curly brace.
+ * Starting curly braces should begin on the same line as the control structure and closing braces should be on a new line.
+ * `else` or `else if` control structures should be on the same line as the previous ending curly brace.
  * Put a single space after keywords and before their parentheses.
  * No spaces between parentheses and their contents.
  * Return and break early.
