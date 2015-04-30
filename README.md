@@ -116,8 +116,7 @@ if (somethingIsBad == YES) {
 
 if (something == nil) {
     // do stuff
-}
-else {
+} else {
     // do other stuff
 }
 ```
